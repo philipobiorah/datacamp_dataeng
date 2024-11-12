@@ -23,3 +23,5 @@ print(variance)
 
 
 
+#Quantiles
+np.quantile(msleep['sleep_total'], [0, 0.25, 0.5, 0.75, 1])
