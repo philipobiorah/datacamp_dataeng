@@ -38,3 +38,25 @@ print(xls['1700'].head())
 # 1      Albania  41.0000   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN  ...
 # 2      Algeria  36.7500   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN  ...
 # 3      Andorra  42.5075   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN  ...
+
+
+
+
+
+# Import package
+import requests
+
+# Assign URL to variable: url
+url = 'http://www.omdbapi.com/?apikey=72bc447a&t=social+network'
+
+# Package the request, send the request and catch the response: r
+
+r = requests.get(url)
+# Decode the JSON data into a dictionary: json_data
+json_data = r.json()
+
+# Print each key-value pair in json_data
+for k in json_data.keys():
+    print(k + ': ', json_data[k])
+#output: Title:  The Social Network 
+# Year:  2010   
