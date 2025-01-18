@@ -57,3 +57,12 @@ cat_clean_rows = airlines['cleanliness'].isin(cat_clean)
 
 # print rows with inconsistent data
 print(airlines[cat_clean_rows])
+
+# Print rows with consistent data
+print(airlines[~cat_clean_rows])
+
+# checking value consistency
+# check for leading or trailing white spaces
+demographics = demographics['marriage_status'].str.strip()
+demographics['marriage_status'].value_counts()
+
