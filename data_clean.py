@@ -73,3 +73,10 @@ demographics['income_group'] = pd.qcut(demographics['household_income'], q = 3, 
 
 # Print income group column
 demographics[['income_group', 'household_income']]
+#Using cut() to categorize data
+# Create ranges for categories
+ranges = [0, 200000, 500000, np.inf]
+group_names = ['0-200K', '200K-500K', '500K+']
+# Create income group column 
+demographics['income_group'] = pd.cut(demographics['household_income'], bins = ranges, labels = group_names)
+
