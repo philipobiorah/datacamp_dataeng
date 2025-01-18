@@ -66,3 +66,10 @@ print(airlines[~cat_clean_rows])
 demographics = demographics['marriage_status'].str.strip()
 demographics['marriage_status'].value_counts()
 
+# Collapsing data into categories
+
+group_names = ['0-200K', '200K-500K', '500K+']
+demographics['income_group'] = pd.qcut(demographics['household_income'], q = 3, labels = group_names)
+
+# Print income group column
+demographics[['income_group', 'household_income']]
