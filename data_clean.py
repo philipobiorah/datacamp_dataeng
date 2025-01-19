@@ -80,3 +80,6 @@ group_names = ['0-200K', '200K-500K', '500K+']
 # Create income group column 
 demographics['income_group'] = pd.cut(demographics['household_income'], bins = ranges, labels = group_names)
 
+#print unique values of the column
+print(airlines['dest_region'].unique())
+print(airlines['dest_size'].unique())
