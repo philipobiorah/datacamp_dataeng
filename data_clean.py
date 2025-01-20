@@ -106,3 +106,15 @@ airlines['day_week'] = airlines['day'].replace(mappings)
 # Fixing the phone number column
 # Replace "+" with  "00"
 phones["Phone number"] = phones["Phone number"].str.replace("+", "00")
+
+# Replace "Dr." with empty string ""
+airlines['full_name'] = airlines['full_name'].str.replace("Dr.","")
+
+# Replace "Mr." with empty string ""
+airlines['full_name'] = airlines['full_name'].str.replace("Mr.", "")
+
+# Replace "Miss" with empty string ""
+airlines['full_name'] = airlines['full_name'].str.replace("Miss", "")
+
+# Replace "Ms." with empty string ""
+airlines['full_name'] = airlines['full_name'].str.replace("Ms.", "")
