@@ -149,3 +149,11 @@ banking.loc[acct_eu, 'acct_amount'] = banking.loc[acct_eu, 'acct_amount'] * 1.1
 # Unify acct_cur column by changing 'euro' values to 'dollar'
 banking.loc[acct_eu, 'acct_cur'] = 'dollar'
 
+# Convert account_opened to datetime
+banking['account_opened'] = pd.to_datetime(banking['account_opened'], infer_datetime_format = True, errors='coerce')
+
+
+# Convert account_opened to datetime
+banking['account_opened'] = pd.to_datetime(banking['account_opened'], format='%d-%m-%Y', errors='coerce')
+
+
