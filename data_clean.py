@@ -157,3 +157,14 @@ banking['account_opened'] = pd.to_datetime(banking['account_opened'], infer_date
 banking['account_opened'] = pd.to_datetime(banking['account_opened'], format='%d-%m-%Y', errors='coerce')
 
 
+banking['acct_year'] = banking['account_opened'].dt.strftime('%Y')
+
+#Cross validation 
+sum_classes = flights[['economy', 'business', 'first']].sum(axis = 1)
+passenger_equ = sum_classes == flights['total_passengers']
+# Find and filter out rows where sum_classes != total_passengers
+invalid_passes = flights[~passenger_equ]
+# Print invalid_passes
+print(invalid_passes)
+consistent_passes = flights[passenger_equ]
+
