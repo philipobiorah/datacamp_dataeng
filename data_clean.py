@@ -177,3 +177,7 @@ import datetime as dt
 # Convert to datetime and get today's date
 users['Birthday'] = pd.to_datetime(users['Birthday'])
 today = dt.datetime.now()
+# For each row in the Birthday column, calculate year difference
+age_manual = today.year - users['Birthday'].dt.year 
+# Find instances where ages match
+age_equ = age_manual == users['Age']
