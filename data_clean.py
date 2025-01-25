@@ -168,3 +168,12 @@ invalid_passes = flights[~passenger_equ]
 print(invalid_passes)
 consistent_passes = flights[passenger_equ]
 
+
+
+# Cross filed validation
+import pandas as pd
+import datetime as dt
+
+# Convert to datetime and get today's date
+users['Birthday'] = pd.to_datetime(users['Birthday'])
+today = dt.datetime.now()
