@@ -181,3 +181,6 @@ today = dt.datetime.now()
 age_manual = today.year - users['Birthday'].dt.year 
 # Find instances where ages match
 age_equ = age_manual == users['Age']
+# Find and filter out rows with  inconsistent age
+inconsistent_age = users[~age_equ] 
+consistent_age = users[age_equ]
