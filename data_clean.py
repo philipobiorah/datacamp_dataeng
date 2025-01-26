@@ -184,3 +184,10 @@ age_equ = age_manual == users['Age']
 # Find and filter out rows with  inconsistent age
 inconsistent_age = users[~age_equ] 
 consistent_age = users[age_equ]
+
+# Store fund columns to sum against
+fund_columns = ['fund_A', 'fund_B', 'fund_C', 'fund_D']
+
+# Find rows where fund_columns row sum == inv_amount
+inv_equ = banking[fund_columns].sum(axis = 1) == banking['inv_amount']
+
