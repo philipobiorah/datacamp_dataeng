@@ -191,3 +191,8 @@ fund_columns = ['fund_A', 'fund_B', 'fund_C', 'fund_D']
 # Find rows where fund_columns row sum == inv_amount
 inv_equ = banking[fund_columns].sum(axis = 1) == banking['inv_amount']
 
+#store consistent and inconsistent data
+consistent_inv = banking[inv_equ]
+inconsistent_inv = banking[~inv_equ]
+
+
