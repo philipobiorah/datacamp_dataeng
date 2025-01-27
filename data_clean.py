@@ -195,4 +195,9 @@ inv_equ = banking[fund_columns].sum(axis = 1) == banking['inv_amount']
 consistent_inv = banking[inv_equ]
 inconsistent_inv = banking[~inv_equ]
 
+# Print inconsistent data
+print("Number of inconsistent investments: ", inconsistent_inv.shape[0])
 
+
+# Store today's date and find ages
+today = dt.datetime.now() 
