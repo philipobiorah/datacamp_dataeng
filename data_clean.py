@@ -201,3 +201,5 @@ print("Number of inconsistent investments: ", inconsistent_inv.shape[0])
 
 # Store today's date and find ages
 today = dt.datetime.now() 
+ages_manual = today.year - users['Birthday'].dt.year
+
